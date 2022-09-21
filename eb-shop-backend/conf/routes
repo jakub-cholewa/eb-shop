@@ -1,0 +1,64 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# index
+
+
+# An example controller showing how to use dependency injection
+GET     /api/count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /api/message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /api/assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# home
+GET     /                               controllers.ApplicationController.index
+
+# login
+GET     /api/authenticate/:provider     controllers.SocialAuthController.authenticate(provider)
+
+# logout
+GET     /api/signout                    controllers.ApplicationController.signOut
+
+# chair routes
+POST    /api/addchair                   controllers.ChairController.addChair
+POST    /api/updatechair/:id            controllers.ChairController.updateChair(id: Long)
+GET     /api/chairs                     controllers.ChairController.getChairs
+DELETE  /api/deletechair/:id            controllers.ChairController.deleteChair(id: Long)
+
+# bed routes
+POST    /api/addbed                     controllers.BedController.addBed
+POST    /api/updatebed/:id              controllers.BedController.updateBed(id: Long)
+GET     /api/beds                       controllers.BedController.getBeds
+DELETE  /api/deletebed/:id              controllers.BedController.deleteBed(id: Long)
+
+# desk routes
+POST    /api/adddesk                     controllers.DeskController.addDesk
+POST    /api/updatedesk/:id              controllers.DeskController.updateDesk(id: Long)
+GET     /api/desks                       controllers.DeskController.getDesks
+DELETE  /api/deletedesk/:id              controllers.DeskController.deleteDesk(id: Long)
+
+# light routes
+POST    /api/addlight                     controllers.LightController.addLight
+POST    /api/updatelight/:id              controllers.LightController.updateLight(id: Long)
+GET     /api/lights                       controllers.LightController.getLights
+DELETE  /api/deletelight/:id              controllers.LightController.deleteLight(id: Long)
+
+# drawer routes
+POST    /api/adddrawer                     controllers.DrawerController.addDrawer
+POST    /api/updatedrawer/:id              controllers.DrawerController.updateDrawer(id: Long)
+GET     /api/drawers                       controllers.DrawerController.getDrawers
+DELETE  /api/deletedrawer/:id              controllers.DrawerController.deleteDrawer(id: Long)
+
+# carpet routes
+POST    /api/addcarpet                     controllers.CarpetController.addCarpet
+POST    /api/updatecarpet/:id              controllers.CarpetController.updateCarpet(id: Long)
+GET     /api/carpets                       controllers.CarpetController.getCarpets
+DELETE  /api/deletecarpet/:id              controllers.CarpetController.deleteCarpet(id: Long)
+
+# mapping frontend
+GET     /*placeholder                      controllers.ApplicationController.redirect(placeholder)
+
